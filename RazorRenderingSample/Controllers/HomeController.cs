@@ -25,5 +25,13 @@ namespace RazorRenderingSample.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult TestRendering()
+        {
+
+            ViewData["hello"] = "<div>Hello</div><div>World</div>";
+
+            return View();
+        }
     }
 }
